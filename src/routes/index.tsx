@@ -1,5 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
-import TabBottomRoutes from "./routes";
+
+import TabBottomRoutes from "./tab.routes";
+
 
 export default function Router() {
     return (
