@@ -5,10 +5,20 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colors.GRAY,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    width: '100%'
   },
-  text: {
-    fontSize: theme.font_size.title
+  title: {
+    fontSize: theme.font_size.title,
+    fontWeight: '600',
+    marginTop: 10,
+    marginLeft: 10,
+    marginBottom: 5,
   },
+  flatListContainer: {
+    width: '100%',
+    maxHeight: '70%',
+    padding: 10,
+  }
 });

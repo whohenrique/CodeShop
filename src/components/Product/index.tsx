@@ -1,20 +1,15 @@
-import { ReactNode } from 'react';
 import { useState } from 'react';
 import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native';
 import productImage from '../../assets/Teclado Gamer.jpg';
+import { ProductProps } from '../../@types/product';
 import { Ionicons } from '@expo/vector-icons';
 
 import { styles } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
-interface ProductProps {
-    image: ReactNode;
-    title: string;
-    price: string;
-    favorite: boolean;
-}
 
 export default function Product({image, title, price, favorite: initialFavorite}: ProductProps) {
-
+  const navigation = useNavigation();
   const [favorite, setFavorite] = useState(initialFavorite);
 
   const toggleFavorite = () => {
@@ -23,7 +18,7 @@ export default function Product({image, title, price, favorite: initialFavorite}
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.product} >
+      <TouchableOpacity style={styles.product} onPress={() => navigation.navigate("Detail")}>
         <View >
           {image && <Image source={productImage} style={styles.productImage}/> }
         </View>

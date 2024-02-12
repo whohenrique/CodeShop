@@ -1,6 +1,7 @@
 import { StatusBar } from 'react-native';
 import { SafeAreaView, StyleSheet  } from 'react-native';
 import Router from './src/routes';
+import { ProductProvider } from './src/hooks/ProductContext';
 
 import { theme } from './src/theme';
 
@@ -9,7 +10,9 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'default'} />
-      <Router />
+      <ProductProvider>
+        <Router />
+      </ProductProvider>
     </SafeAreaView>
   );
 }

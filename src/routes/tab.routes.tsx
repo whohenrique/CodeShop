@@ -36,7 +36,6 @@ export default function BottomTabNavigator() {
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
-                tabBarShowLabel: false,
                 headerStyle: {
                     backgroundColor: theme.colors.BLACK,
                     height: 115,
@@ -44,6 +43,7 @@ export default function BottomTabNavigator() {
                     borderBottomStartRadius: 10,
                 },
                 headerTintColor: theme.colors.WHITE,
+                tabBarShowLabel: false,
                 tabBarHideOnKeyboard: true,
                 tabBarInactiveTintColor: theme.colors.BLACK,
                 tabBarActiveTintColor: theme.colors.BLACK,
@@ -51,7 +51,7 @@ export default function BottomTabNavigator() {
                 tabBarStyle: {
                     height: 60,
                     position: 'absolute',
-                    bottom: 20,
+                    bottom: 10,
                     right: 50,
                     left: 50,
                     justifyContent: 'center',
@@ -86,7 +86,7 @@ export default function BottomTabNavigator() {
             options={({ navigation }) => ({
                 headerShown: true,
                 headerTitleAlign: 'left',
-                title: 'Carrinho',
+                title: 'Carrinho de compras',
                 tabBarBadge: 4,
                 tabBarIcon: ({color, size}) => <FontAwesome5 name='shopping-bag' color={color} size={size}/>,
                 headerLeft: () => (
