@@ -1,8 +1,6 @@
 import { useFonts, Inter_400Regular, Inter_700Bold,  } from "@expo-google-fonts/inter";
 
-// const [fontsLoaded] = useFonts({
-//     Inter_400Regular, Inter_700Bold,
-// })
+
 export const theme = {
     colors: {
         WHITE: '#FFFFFF',
@@ -12,8 +10,8 @@ export const theme = {
     },
 
     font_family: {
-        regular: Inter_400Regular,
-        bold: Inter_700Bold,
+        regular: 'Inter_400Regular',
+        bold: 'Inter_700Bold',
     },
 
     font_size: {
