@@ -15,7 +15,7 @@ export default function StackNavigator<RootStackParamList>() {
   return (
     <Stack.Navigator
       screenOptions={{
-        title: 'AAAAAAA',
+        title: 'Detalhes do Produto',
         headerStyle: {
           backgroundColor: theme.colors.BLACK,  
         },

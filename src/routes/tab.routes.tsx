@@ -3,12 +3,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons,FontAwesome5, AntDesign } from '@expo/vector-icons'; 
 import { useNavigation } from '@react-navigation/native';
 
-import Home from '../screens/HomeScreen/Home';
-import Favorites from '../screens/FavoritesScreen/Favorites';
-import ShoppingCart from '../screens/ShoppingCartScreen/ShoppingCart';
-import Profile from '../screens/ProfileScreen/Profile';
+import Home from '@/screens/HomeScreen/Home';
+import Favorites from '@/screens/FavoritesScreen/Favorites';
+import ShoppingCart from '@/screens/ShoppingCartScreen/ShoppingCart';
+import Profile from '@/screens/ProfileScreen/Profile';
 
-import { theme } from '../theme';
+import { theme } from '@/theme';
 
 type NavigationType = {
     Home: undefined;
@@ -50,15 +50,9 @@ export default function BottomTabNavigator() {
                 tabBarActiveBackgroundColor: theme.colors.GRAY,
                 tabBarStyle: {
                     height: 60,
-                    position: 'absolute',
-                    bottom: 10,
-                    right: 50,
-                    left: 50,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    borderRadius: 8,
-                    elevation: 1
-                },
+               },
         }}>
         <Tab.Screen 
             name='Home'
