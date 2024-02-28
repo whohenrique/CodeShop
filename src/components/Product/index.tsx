@@ -18,7 +18,7 @@ export default function Product({image, title, price, favorite: initialFavorite}
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.product} onPress={() => navigation.navigate("Detail")}>
+      <TouchableOpacity style={styles.product} onPress={() => navigation.navigate("Detail" as never)}>
         <View >
           {image && <Image source={productImage} style={styles.productImage}/> }
         </View>
@@ -28,7 +28,7 @@ export default function Product({image, title, price, favorite: initialFavorite}
           <Text style={styles.productTitle}>{title}</Text>
             <View>
               <TouchableOpacity style={{paddingLeft: 20}} onPress={toggleFavorite}>
-                <Ionicons name={favorite ? 'heart' : 'heart-outline'} size={30} color={favorite ? 'red' : 'black'} />
+                <Ionicons name={favorite ? 'heart' : 'heart-outline'} size={26} color={favorite ? 'red' : 'black'} />
               </TouchableOpacity>
             </View>
           </View>

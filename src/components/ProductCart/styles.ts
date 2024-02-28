@@ -13,17 +13,21 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: theme.colors.WHITE,
     height: 120,
-    width: '100%'
+    width: '100%',
+    paddingRight: 5,
+    margin: 'auto',
   },
   productImage: {
-    width: 100,
-    height: 80,
+    width: 130,
+    height: 90,
+    marginRight: 15,
   },
   productInfo: {
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     maxWidth: '50%',
+    gap: 15,
   },
   productTitle: {
     fontSize: theme.font_size.title_2,
@@ -31,7 +35,7 @@ export const styles = StyleSheet.create({
   },
   productPrice: {
     color: theme.colors.GREEN,
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
   },
 });
