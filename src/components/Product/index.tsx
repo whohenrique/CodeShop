@@ -1,26 +1,30 @@
 import { useState } from 'react';
 import { View, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native';
-import productImage from '../../assets/Teclado Gamer.jpg';
 import { ProductProps } from '../../@types/product';
 import { Ionicons } from '@expo/vector-icons';
-
 import { styles } from './styles';
-import { useNavigation } from '@react-navigation/native';
 
+interface Props extends ProductProps {
+  navigation: any; 
+}
 
-export default function Product({image, title, price, favorite: initialFavorite}: ProductProps) {
-  const navigation = useNavigation();
+export default function Product({id, image, title, description, price, favorite: initialFavorite, navigation}: Props) {
+
   const [favorite, setFavorite] = useState(initialFavorite);
 
   const toggleFavorite = () => {
     setFavorite(!favorite);
   };
 
+  const navigateToDetail = () => {
+    navigation.navigate('Detail', { productId: id }); 
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.product} onPress={() => navigation.navigate("Detail" as never)}>
-        <View >
-          {image && <Image source={productImage} style={styles.productImage}/> }
+      <TouchableOpacity style={styles.product} onPress={navigateToDetail}>
+        <View>
+          <Image source={image} style={styles.productImage} />
         </View>
 
         <View style={styles.productInfo}>

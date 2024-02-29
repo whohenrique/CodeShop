@@ -1,8 +1,8 @@
-import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack";
-import Home from "../screens/HomeScreen/Home";
-import Detail from "../screens/DetailScreen/Detail";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Detail from "@/screens/DetailScreen/Detail";
 import BottomTabNavigator from "./tab.routes";
-import { theme } from "../theme";
+
+import { theme } from "@/theme";
 
 export type RootStackParamList = {
   BottomTabNavigator: undefined;
@@ -15,7 +15,6 @@ export default function StackNavigator<RootStackParamList>() {
   return (
     <Stack.Navigator
       screenOptions={{
-        title: 'Detalhes do Produto',
         headerStyle: {
           backgroundColor: theme.colors.BLACK,  
         },

@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 10,
     marginLeft: 10,
-    marginBottom: 5,
   },
   flatListContainer: {
     width: '100%',

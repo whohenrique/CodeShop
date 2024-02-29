@@ -1,8 +1,9 @@
 import React from 'react';
 import { SafeAreaView, FlatList, ListRenderItem, Text,  } from 'react-native';
 import ProductCart from '../../components/ProductCart';
-import { productList, } from '../../data/CodeShopList';
-import { ProductProps } from '../../@types/product';
+import { ProductProps } from '@/@types/product';
+import { productList } from '@/data/CodeShopList';
+
 
 import { styles } from './styles';
 

@@ -1,10 +1,9 @@
 
-import { ReactNode } from 'react';
-
 export interface ProductProps {
     id: number;
-    image: ReactNode;
+    image: ImageSourcePropType;
     title: string;
+    description: string;
     price: number;
     favorite: boolean;
     active: boolean;

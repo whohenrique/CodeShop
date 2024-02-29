@@ -1,8 +1,8 @@
 import { StatusBar } from 'react-native';
 import { SafeAreaView, StyleSheet  } from 'react-native';
 import { useFonts, Inter_400Regular, Inter_700Bold,  } from '@expo-google-fonts/inter';
-import { ProductProvider } from './src/hooks/ProductContext';
 import * as SplashScreen from 'expo-splash-screen';
+import { ProductProvider } from '@/hooks/ProductsContext';
 import { theme } from './src/theme';
 
 import Router from './src/routes';
@@ -22,9 +22,9 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle={'default'} />
       <ProductProvider>
-        <Router />
+        <StatusBar barStyle={'default'} />
+          <Router />
       </ProductProvider>
     </SafeAreaView>
   );
