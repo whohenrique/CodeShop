@@ -9,9 +9,9 @@ export type RootStackParamList = {
   Detail: { id: number };
 };
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-export default function StackNavigator<RootStackParamList>() {
+export default function StackNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{

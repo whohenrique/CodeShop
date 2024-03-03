@@ -5,8 +5,8 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colors.GRAY,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '100%'
   },
   title: {
@@ -15,9 +15,15 @@ export const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 10,
   },
-  flatListContainer: {
-    width: '100%',
-    maxHeight: '70%',
-    padding: 10,
-  }
+  listEmptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '60%'
+  },
+  listEmptyMessage: {
+    fontSize: 18,
+    color: '#9E9DAA',
+    fontWeight: '500',
+  },
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, ListRenderItem, SafeAreaView } from 'react-native';
-import { productList } from '@/data/CodeShopList';
+import { productList } from '@/data/database';
 import { ProductProps } from '@/@types/product';
 import Product from '@/components/Product';
 import { useNavigation } from '@react-navigation/native';
@@ -18,9 +18,10 @@ export default function Home() {
     <SafeAreaView style={styles.container}>
       <Header />
       <FlatList
-        keyExtractor={item => item.id.toString()}
         data={productList}
         renderItem={renderItem}
+        keyExtractor={item => item.id.toString()}
+        contentContainerStyle={{gap: 10, paddingBottom: 20, marginTop: 10 }}
       />
     </SafeAreaView>
   );

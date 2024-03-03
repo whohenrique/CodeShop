@@ -38,9 +38,9 @@ export default function BottomTabNavigator() {
                 headerShown: false,
                 headerStyle: {
                     backgroundColor: theme.colors.BLACK,
-                    height: 115,
-                    borderBottomEndRadius: 10,
-                    borderBottomStartRadius: 10,
+                    height: 100,
+                    borderBottomEndRadius: 15,
+                    borderBottomStartRadius: 15,
                 },
                 headerTintColor: theme.colors.WHITE,
                 tabBarShowLabel: false,
@@ -64,41 +64,32 @@ export default function BottomTabNavigator() {
         <Tab.Screen 
             name='Favorites'
             component={Favorites}
-            options={({ navigation }) => ({
+            options={({ }) => ({
                 headerShown: true,
                 title: 'Favoritos',
-                headerTitleAlign: 'left',
-                tabBarIcon: ({color, size}) => <AntDesign name='heart' color={color} size={size}/>,
-                headerLeft: () => (
-                    <BackButton onPress={() => navigation.navigate('Home')} />
-                ),
+                headerTitleAlign: 'center',
+                tabBarIcon: ({color, size}) => <AntDesign name='heart' color={color} size={size}/>
             })}
         />
         <Tab.Screen 
             name='ShoppingCart'
             component={ShoppingCart}
-            options={({ navigation }) => ({
+            options={({ }) => ({
                 headerShown: true,
-                headerTitleAlign: 'left',
                 title: 'Carrinho de compras',
+                headerTitleAlign: 'center',
                 tabBarBadge: 4,
-                tabBarIcon: ({color, size}) => <FontAwesome5 name='shopping-bag' color={color} size={size}/>,
-                headerLeft: () => (
-                    <BackButton onPress={() => navigation.navigate('Home')} />
-                ),
+                tabBarIcon: ({color, size}) => <FontAwesome5 name='shopping-bag' color={color} size={size}/>
             })}
         />
         <Tab.Screen 
             name='Profile'
             component={Profile}
-            options={({ navigation }) => ({
+            options={({ }) => ({
                 headerShown: true,
-                headerTitleAlign: 'left',
                 title: 'Minha conta',
-                tabBarIcon: ({color, size}) => <Ionicons name='person-sharp' color={color} size={size}/>,
-                headerLeft: () => (
-                    <BackButton onPress={() => navigation.navigate('Home')} />
-                ),
+                headerTitleAlign: 'center',
+                tabBarIcon: ({color, size}) => <Ionicons name='person-sharp' color={color} size={size}/>
             })}
         />
     </Tab.Navigator>

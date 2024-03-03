@@ -7,10 +7,10 @@ import Button from '@/components/Button';
 import { styles } from './styles';
 
 export default function Detail() {
-  const { products } = useContext(ProductContext) ?? { products: [] }; 
+  const { products, toggleShoppingCart } = useContext(ProductContext) ?? { products: [], toggleShoppingCart: () => {} };
   const navigation = useNavigation();
   const routeParams = useRoute().params as { productId: number };
-  
+
   useEffect(() => {
     const product = products.find(p => p.id === routeParams.productId);
     if (product) {
@@ -28,25 +28,30 @@ export default function Detail() {
     );
   }
 
+  const handleAddToCart = () => {
+    toggleShoppingCart(product.id); // Adiciona o item ao carrinho
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ width: '100%'}} >
+      <View style={{ width: '100%' }}>
         {product.image ? (
           <Image source={product.image} style={{ width: '100%', height: 450 }} resizeMode='stretch' />
         ) : (
           <Text>Imagem não disponível</Text>
         )}
         <View style={styles.content}>
-          <Text style={{fontSize: 20, fontWeight: '700'}} >R$ {product.price}</Text>
-          <Text style={{fontSize: 16, fontWeight: '400', }} >{product.description}</Text>
+          <Text style={{ fontSize: 20, fontWeight: '700' }}>R$ {product.price}</Text>
+          <Text style={{ fontSize: 16, fontWeight: '400' }}>{product.description}</Text>
         </View>
       </View>
 
       <View style={styles.contenteButton}>
-        <Button 
+        <Button
           title='Adicionar ao Carrinho'
           width={350}
           height={44}
+          onPress={handleAddToCart}
         />
       </View>
     </SafeAreaView>
