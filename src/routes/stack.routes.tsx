@@ -1,21 +1,20 @@
-import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack";
-import Home from "../screens/HomeScreen/Home";
-import Detail from "../screens/DetailScreen/Detail";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Detail from "@/screens/DetailScreen/Detail";
 import BottomTabNavigator from "./tab.routes";
-import { theme } from "../theme";
+
+import { theme } from "@/theme";
 
 export type RootStackParamList = {
   BottomTabNavigator: undefined;
   Detail: { id: number };
 };
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-export default function StackNavigator<RootStackParamList>() {
+export default function StackNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{
-        title: 'AAAAAAA',
         headerStyle: {
           backgroundColor: theme.colors.BLACK,  
         },

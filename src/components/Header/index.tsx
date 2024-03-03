@@ -7,10 +7,9 @@ export default function Header() {
 
   const [searchQuery, setSearchQuery] = useState("")
 
-
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.textContainer}>CodeShop</Text>
+      <Text style={styles.textContainer}>{"</CodeShop>"}</Text>
       <View>
         <TextInput
           clearButtonMode='always'

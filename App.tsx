@@ -1,17 +1,30 @@
 import { StatusBar } from 'react-native';
 import { SafeAreaView, StyleSheet  } from 'react-native';
-import Router from './src/routes';
-import { ProductProvider } from './src/hooks/ProductContext';
-
+import { useFonts, Inter_400Regular, Inter_700Bold,  } from '@expo-google-fonts/inter';
+import * as SplashScreen from 'expo-splash-screen';
+import { ProductProvider } from '@/hooks/ProductsContext';
 import { theme } from './src/theme';
+
+import Router from './src/routes';
+
+SplashScreen.preventAutoHideAsync()
 
 export default function App() {
 
+  const [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_700Bold,
+  })
+
+  if(!fontsLoaded) {
+    SplashScreen.hideAsync()
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle={'default'} />
       <ProductProvider>
-        <Router />
+        <StatusBar barStyle={'default'} />
+          <Router />
       </ProductProvider>
     </SafeAreaView>
   );

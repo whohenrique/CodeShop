@@ -1,5 +1,3 @@
-import { useFonts, Inter_400Regular, Inter_700Bold,  } from "@expo-google-fonts/inter";
-
 
 export const theme = {
     colors: {
