@@ -1,4 +1,3 @@
-
 export interface ProductProps {
     id: number;
     image: ImageSourcePropType;
@@ -6,5 +5,5 @@ export interface ProductProps {
     description: string;
     price: number;
     favorite: boolean;
-    active: boolean;
+    activeCart: boolean;
 };
