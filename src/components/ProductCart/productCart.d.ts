@@ -1,10 +1,8 @@
-
-import { ReactNode } from 'react';
-
 export interface ProductCartProps {
-    active: boolean;
-    image: ReactNode |  string;
+    id: number;
     title: string;
+    image: ImageSourcePropType;
     price: number;
-    remove:  () => void;
+    activeCart: boolean;
+    onRemove: () => void;
 };

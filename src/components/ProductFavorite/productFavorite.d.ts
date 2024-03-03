@@ -1,4 +1,4 @@
-export interface ProductProps {
+export interface ProductFavoriteProps {
     id: number;
     title: string;
     image: ImageSourcePropType;
